@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SUMAKI – Carne de llama y derivados nutritivos</title>
+  <meta name="description" content="SUMAKI: charque, carne fresca y embutidos de llama desde Palcoco, La Paz – Bolivia.">
+  <link rel="icon" href="img/logo.png">
+  <!-- Tailwind CSS CDN para garantizar que todas las clases de diseño funcionen al 100% -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-stone-50 text-stone-900">
+
+  <!-- HEADER -->
+  <header>
+    <a class="logo-container" href="index.html" aria-label="SUMAKI – Inicio"><img src="img/logo.png" alt="SUMAKI – Alimentos nutritivos de calidad"></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
+    <nav id="mainNav">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="productos.html">Productos</a>
+      <a href="#recetas">Recetas</a>
+      <a href="#contacto">Contacto</a>
+      <a class="btn nav-cta" href="productos.html">Pedir ahora</a>
+    </nav>
+  </header>
+
+<!-- HERO BANNER CON DISEÑO DE DOS COLUMNAS E IMAGEN DE FONDO -->
+  <section class="hero" id="inicio">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="hero-grid">
+        
+        <!-- Columna Izquierda: Textos y Botones -->
+        <div class="hero-content">
+          <span class="hero-tag">Sabor andino con sello boliviano</span>
+          <h1>Transformamos la <span class="highlight">carne de llama</span> en productos saludables</h1>
+          <p>Alto valor proteico, bajo en grasas y colesterol. Descubre cortes frescos, charque artesanal y embutidos de primera calidad desde Palcoco, La Paz para toda Bolivia.</p>
+          <div class="hero-buttons">
+            <a class="btn" href="productos.html">Ver Productos →</a>
+            <a class="btn btn-secondary" href="#recetas">Ver Recetas</a>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Imagen destacada (Ruta: img/fondo) -->
+        <div class="hero-image-wrapper">
+          <div class="hero-logo-card">
+            <img src="img/logo.png" alt="SUMAKI – Alimentos nutritivos de calidad">
+            <p>Hecho en Palcoco, La Paz · Bolivia</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE SUMAKI -->
+  <section id="nosotros" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-black text-stone-900 mb-4">Sobre SUMAKI</h2>
+        <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-6"></div>
+        <p class="text-stone-600 text-lg leading-relaxed">
+          Somos un emprendimiento boliviano dedicado a la transformación de productos cárnicos elaborados a base de carne de llama, ofreciendo alimentos nutritivos, seguros y de excelente calidad, conservando el sabor y las propiedades nutricionales de nuestra tierra andina.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <div class="bg-stone-50 p-8 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition">
+          <div class="w-14 h-14 bg-red-100 text-red-600 rounded-xl flex items-center justify-center text-2xl mb-6 font-bold">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3 class="text-xl font-bold text-stone-900 mb-3">Nuestra Misión</h3>
+          <p class="text-stone-600 leading-relaxed">Elaborar productos cárnicos innovadores a base de carne de llama, garantizando calidad, inocuidad y alto valor nutricional, promoviendo una alimentación saludable.</p>
+        </div>
+        <div class="bg-stone-50 p-8 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition">
+          <div class="w-14 h-14 bg-red-100 text-red-600 rounded-xl flex items-center justify-center text-2xl mb-6 font-bold">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <h3 class="text-xl font-bold text-stone-900 mb-3">Nuestra Visión</h3>
+          <p class="text-stone-600 leading-relaxed">Ser una empresa líder en Bolivia en la transformación y comercialización de derivados de carne de llama, reconocida por innovación y compromiso sostenible.</p>
+        </div>
+        <div class="bg-stone-50 p-8 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition">
+          <div class="w-14 h-14 bg-red-100 text-red-600 rounded-xl flex items-center justify-center text-2xl mb-6 font-bold">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <h3 class="text-xl font-bold text-stone-900 mb-3">¿Por qué Elegirnos?</h3>
+          <p class="text-stone-600 leading-relaxed">Alto contenido proteico, bajísimo en grasas, productos 100% naturales procesados bajo estrictas normas de inocuidad y producción responsable en el altiplano.</p>
+        </div>
+      </div>
+    </div>
+  </section>  
+
+  <!-- SECCIÓN ¿POR QUÉ ELEGIR SUMAKI? (CON TUS PROPIAS IMÁGENES) -->
+  <section class="py-16 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-4xl font-black text-stone-900 mb-4">¿Por qué elegir SUMAKI?</h2>
+        <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-4"></div>
+        <p class="text-stone-600 text-sm sm:text-base">Comprometidos con la excelencia nutricional y el desarrollo del altiplano boliviano.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Beneficio 1: Alta en proteínas -->
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
+          <div class="w-20 h-20 rounded-2xl overflow-hidden mb-5 bg-red-50 flex items-center justify-center border border-red-100 shadow-inner">
+            <img src="img/beneficios/proteina.jpg" alt="Alta en proteínas" class="w-full h-full object-cover" onerror="this.src='img/beneficios/proteina.jpg'">
+          </div>
+          <h3 class="text-lg font-bold text-stone-900 mb-2">Alta en proteínas</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">Carne andina de llama con un excepcional valor nutricional para tu salud diaria.</p>
+        </div>
+
+        <!-- Beneficio 2: Baja en grasa -->
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
+          <div class="w-20 h-20 rounded-2xl overflow-hidden mb-5 bg-red-50 flex items-center justify-center border border-red-100 shadow-inner">
+            <img src="img/beneficios/grasa.jpg" alt="Baja en grasa" class="w-full h-full object-cover" onerror="this.src='img/beneficios/bajo_en_grasa.jpg'">
+          </div>
+          <h3 class="text-lg font-bold text-stone-900 mb-2">Baja en grasa</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">Productos 100% naturales, magros y altamente saludables para toda la familia.</p>
+        </div>
+
+        <!-- Beneficio 3: Calidad garantizada -->
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
+          <div class="w-20 h-20 rounded-2xl overflow-hidden mb-5 bg-red-50 flex items-center justify-center border border-red-100 shadow-inner">
+            <img src="img/beneficios/calidad.jpg" alt="Calidad garantizada" class="w-full h-full object-cover" onerror="this.src='img/beneficios/calidad.jpg'">
+          </div>
+          <h3 class="text-lg font-bold text-stone-900 mb-2">Calidad garantizada</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">Procesados bajo estrictas normas de inocuidad y seguridad alimentaria.</p>
+        </div>
+
+        <!-- Beneficio 4: Producción local -->
+        <div class="bg-white p-6 rounded-2xl border border-stone-200 shadow-sm hover:shadow-md transition text-center flex flex-col items-center">
+          <div class="w-20 h-20 rounded-2xl overflow-hidden mb-5 bg-red-50 flex items-center justify-center border border-red-100 shadow-inner">
+            <img src="img/beneficios/local.jpg" alt="Producción local" class="w-full h-full object-cover" onerror="this.src='img/beneficios/local.png'">
+          </div>
+          <h3 class="text-lg font-bold text-stone-900 mb-2">Producción local</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">Apoyando directamente al crecimiento sostenible de productores en el altiplano.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- RECETAS & PLATOS TRADICIONALES -->
+    <section id="recetas" class="py-20 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-red-600 font-bold text-xs uppercase tracking-widest bg-red-100 px-3 py-1 rounded-full">Gastronomía Andina</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-stone-900 mt-3 mb-4">Recetas Tradicionales & Charquekán</h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-6"></div>
+                <p class="text-stone-600 text-lg">Disfruta de la gastronomía andina con los productos SUMAKI. Marca los ingredientes que ya tienes para preparar tu receta.</p>
+            </div>
+
+            <!-- GRID DE 3 RECETAS INTERACTIVAS -->
+            <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- 1. CHARQUEKÁN -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition border border-stone-200 flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 relative overflow-hidden bg-stone-900">
+                            <img src="img/recetas/charquekan2.jpg" alt="Charquekán de Llama" class="w-full h-full object-cover hover:scale-105 transition duration-500" data-emoji="🍲">
+                            <span class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Plato Estrella</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-black text-stone-900 mb-2">Charquekán de Llama</h3>
+                            <p class="text-stone-600 text-sm mb-4 leading-relaxed">El plato emblemático de Oruro: carne conservada por secado, mote cocido, papa y huevo duro.</p>
+                            
+                            <!-- Checklist interactivo -->
+                            <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 mb-4">
+                                <h4 class="font-bold text-stone-900 text-xs uppercase tracking-wider mb-2 text-red-600"><i class="fa-solid fa-list-check mr-1"></i> Ingredientes Principales:</h4>
+                                <ul id="checklist-charquekan" class="space-y-2 text-stone-700 text-xs"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="productos.html" class="w-full bg-stone-900 hover:bg-red-600 text-white font-bold py-3 rounded-xl text-sm transition flex items-center justify-center space-x-2 shadow">
+                            <span>Pedir Charque para Charquekán</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. CHARQUE CON MOTE -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition border border-stone-200 flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 relative overflow-hidden bg-stone-900">
+                            <img src="img/recetas/charque_mote.jpg" alt="Charque con Mote" class="w-full h-full object-cover hover:scale-105 transition duration-500" data-emoji="🌽">
+                            <span class="absolute top-4 left-4 bg-stone-900 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Tradicional y Rápido</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-black text-stone-900 mb-2">Charque con Mote</h3>
+                            <p class="text-stone-600 text-sm mb-4 leading-relaxed">Desmenuzar y freír ligeramente el charque SUMAKI. Servir acompañado de mote cocido, papa nativa y queso criollo.</p>
+                            
+                            <!-- Checklist interactivo -->
+                            <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 mb-4">
+                                <h4 class="font-bold text-stone-900 text-xs uppercase tracking-wider mb-2 text-red-600"><i class="fa-solid fa-list-check mr-1"></i> Ingredientes Principales:</h4>
+                                <ul id="checklist-charque-mote" class="space-y-2 text-stone-700 text-xs"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="productos.html" class="w-full bg-stone-900 hover:bg-red-600 text-white font-bold py-3 rounded-xl text-sm transition flex items-center justify-center space-x-2 shadow">
+                            <span>Pedir Charque Desmenuzado</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. CHAIRO PACEÑO -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition border border-stone-200 flex flex-col justify-between">
+                    <div>
+                        <div class="h-56 relative overflow-hidden bg-stone-900">
+                            <img src="img/recetas/chairo.jpg" alt="Chairo Paceño" class="w-full h-full object-cover hover:scale-105 transition duration-500" data-emoji="🥣">
+                            <span class="absolute top-4 left-4 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">Sopa Andina</span>
+                        </div>
+                        <div class="p-6">
+                          <h3 class="text-xl font-black text-stone-900 mb-2">Chairo Paceño Nutritivo</h3>
+                          <p class="text-stone-600 text-sm mb-4 leading-relaxed">Sopa tradicional andina elaborada a base de charque de llama desmenuzado, chuño depurado, verduritas y trigo mote.</p>
+                          
+                          <!-- Checklist interactivo -->
+                          <div class="bg-stone-50 p-4 rounded-2xl border border-stone-200 mb-4">
+                              <h4 class="font-bold text-stone-900 text-xs uppercase tracking-wider mb-2 text-red-600"><i class="fa-solid fa-list-check mr-1"></i> Ingredientes Principales:</h4>
+                              <ul id="checklist-chairo" class="space-y-2 text-stone-700 text-xs"></ul>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="productos.html" class="w-full bg-stone-900 hover:bg-red-600 text-white font-bold py-3 rounded-xl text-sm transition flex items-center justify-center space-x-2 shadow">
+                            <span>Pedir Charque Sopero</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+  <!-- CONTACTO & UBICACIÓN -->
+  <section id="contacto" class="py-20 bg-stone-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-black mb-4">Contáctanos & Ubicación</h2>
+        <div class="w-20 h-1 bg-red-600 mx-auto rounded-full mb-6"></div>
+        <p class="text-stone-400 text-lg">Pide tus productos al por mayor o menor directamente a nuestros números o visita nuestra planta procesadora.</p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="space-y-8">
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-red-600/20 text-red-500 rounded-xl flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-1">Teléfonos y WhatsApp</h4>
+              <p class="text-stone-300"><a class="hover:text-white underline" href="tel:+59165641009">+591 65641009</a> / <a class="hover:text-white underline" href="tel:+59173553387">+591 73553387</a></p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-red-600/20 text-red-500 rounded-xl flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-1">Correo Electrónico</h4>
+              <p class="text-stone-300"><a class="hover:text-white underline" href="mailto:sumakidn@gmail.com">sumakidn@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="w-12 h-12 bg-red-600/20 text-red-500 rounded-xl flex items-center justify-center text-xl shrink-0">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-1">Dirección</h4>
+              <p class="text-stone-300"><a class="hover:text-white underline" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Palcoco+Villa+Iberia+Pucarani+La+Paz+Bolivia">Palcoco, Villa Iberia, Pucarani, La Paz - Bolivia</a></p>
+            </div>
+          </div>
+          <div class="flex space-x-4 pt-4">
+            <a href="https://www.facebook.com/share/1DUSEGmhtN/" target="_blank" rel="noopener" class="w-12 h-12 bg-stone-800 hover:bg-red-600 text-white rounded-xl flex items-center justify-center text-xl transition">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.tiktok.com/@sumakibolivia?_r=1&_t=ZS-9Awk0HrQsWy" target="_blank" rel="noopener" class="w-12 h-12 bg-stone-800 hover:bg-red-600 text-white rounded-xl flex items-center justify-center text-xl transition">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- FORMULARIO DE CONTACTO CONECTADO A WHATSAPP -->
+        <div class="bg-stone-800 p-8 rounded-3xl border border-stone-700">
+          <h3 class="text-2xl font-bold mb-6">Envíanos un Mensaje</h3>
+          <form id="contact-form" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-stone-300 mb-1">Nombre Completo</label>
+              <input type="text" id="contact-name" required class="w-full bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-red-600" placeholder="Tu nombre...">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-stone-300 mb-1">Teléfono / WhatsApp</label>
+              <input type="text" id="contact-phone" required class="w-full bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-red-600" placeholder="Tu número...">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-stone-300 mb-1">Mensaje o Consulta</label>
+              <textarea id="contact-msg" rows="4" required class="w-full bg-stone-900 border border-stone-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-red-600" placeholder="¿En qué podemos ayudarte?"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3.5 rounded-xl transition shadow-lg">Enviar Mensaje por WhatsApp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-stone-950 text-stone-400 py-10 border-t border-stone-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="footer-logo"><img src="img/logo.png" alt="SUMAKI"></span>
+      <p class="text-sm mb-6">Alimentos nutritivos de calidad • Carne de Llama 100% Boliviana</p>
+      <p class="text-xs text-stone-600">Derechos de autor © <span id="yr">2026</span> SUMAKI. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a class="wa-float" href="https://wa.me/59165641009?text=Hola%20SUMAKI,%20deseo%20información%20sobre%20sus%20productos%20de%20carne%20de%20llama." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

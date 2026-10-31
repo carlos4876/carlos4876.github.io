@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Catálogo de Productos – SUMAKI</title>
+  <link rel="icon" href="img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a class="logo-container" href="index.html" aria-label="SUMAKI – Inicio"><img src="img/logo.png" alt="SUMAKI – Alimentos nutritivos de calidad"></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menú">☰</button>
+    <nav id="mainNav">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#nosotros">Nosotros</a>
+      <a href="productos.html" style="color: var(--red-main);">Productos</a>
+      <a href="index.html#contacto">Contacto</a>
+      <button class="cartbtn" id="openCartBtn">
+        🛒 <span class="cart-count" id="cartBadgeCount">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- CATÁLOGO PRINCIPAL -->
+  <section id="productos">
+    <div class="container">
+      <h2 class="section-title">Nuestro Catálogo de Productos</h2>
+      <div class="title-underline"></div>
+      <p class="section-subtitle">Haz clic en cualquier producto para ver los detalles, ajustar las cantidades y agregarlo a tu pedido.</p>
+
+      <!-- BOTONES DE FILTRO Y CATÁLOGO PDF -->
+      <div class="tabs">
+        <button class="tab-btn active" onclick="filterProducts('todos', this)">Todos</button>
+        <button class="tab-btn" onclick="filterProducts('fresca', this)">Carnes Frescas</button>
+        <button class="tab-btn" onclick="filterProducts('deshidratada', this)">Charque & Deshidratados</button>
+        <button class="tab-btn" onclick="filterProducts('embutido', this)">Embutidos</button>
+        <button class="tab-btn" onclick="filterProducts('complemento', this)">Complementos</button>
+        
+        <!-- Botón PDF con la misma clase tab-btn -->
+        <a href="docs/catalogo_sumaki.pdf" target="_blank" class="tab-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-file-pdf" style="color: var(--red-main);"></i> Catálogo
+        </a>
+      </div>
+
+      <!-- GRID DE PRODUCTOS -->
+      <div class="products-grid" id="productsContainer">
+        <!-- Renderizado dinámico desde JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- BARRA FLOTANTE DE INICIO DE COMPRA -->
+  <div class="floating-bar" id="floatingBar">
+    <button class="floating-bar-btn" id="floatingCheckoutBtn" type="button">
+      <div class="floating-badge" id="floatingBadge">1</div>
+      <div class="floating-text">
+        <span class="floating-sub">FINALIZAR</span>
+        <span class="floating-title">Mi Compra</span>
+      </div>
+      <div class="floating-total">
+        <div><span class="floating-currency">Bs</span><span class="floating-amount" id="floatingAmount">0.00</span></div>
+        <span class="floating-aprox">Aprox.</span>
+      </div>
+    </button>
+  </div>
+
+<!-- MODAL 1: DETALLE DE PRODUCTO (ESTILO E-COMMERCE ORDENADO) -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-card" style="position: relative;">
+      
+      <div class="modal-main-grid">
+        
+        <!-- Columna Izquierda: Imagen y Zoom -->
+        <div style="position: relative;">
+          <div class="zoom-box-container" id="zoomContainer">
+            <img id="mImg" src="" alt="Producto">
+            <div class="zoom-lens" id="zoomLens"></div>
+            <div class="zoom-result-pane" id="zoomResult"></div>
+          </div>
+          <p style="text-align: center; font-size: 0.72rem; color: var(--text-muted); margin-top: 8px;">
+            <i class="fa-solid fa-magnifying-glass"></i> Pasa el mouse para ver el zoom lateral
+          </p>
+        </div>
+
+        <!-- Columna Derecha: Información, Precio y Controles -->
+        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; text-align: left;">
+          <div>
+            <h3 class="modal-title" id="mTitle" style="font-size: 1.3rem; margin-bottom: 4px;">PRODUCTO</h3>
+            <p class="modal-weight" id="mWeight" style="margin-bottom: 10px;">Presentación: 250 g</p>
+
+            <!-- Descripción y datos técnicos con Ver Más / Ver Menos -->
+            <div style="margin-bottom: 14px;">
+              <div id="mDesc" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;"></div>
+              <button id="toggleDescBtn" type="button" style="background: none; border: none; color: var(--red-main); font-size: 0.75rem; font-weight: 800; cursor: pointer; padding: 4px 0 0 0; text-transform: uppercase;">VER MÁS</button>
+            </div>
+
+            <div class="modal-price-pill" id="mPriceLabel" style="display: inline-block; margin-bottom: 14px;">PRECIO BS 0.0 / PAQUETE</div>
+          </div>
+
+          <div>
+            <div class="modal-qty-box" style="margin-bottom: 14px; padding: 8px 16px;">
+              <button class="qty-btn" id="qtyMinus" type="button" style="width: 36px; height: 36px; font-size: 1.1rem;">-</button>
+              <div class="qty-display">
+                <span class="qty-number" id="qtyValue" style="font-size: 1.4rem;">1</span>
+                <span class="qty-unit" id="qtyUnit">PAQUETES</span>
+              </div>
+              <button class="qty-btn" id="qtyPlus" type="button" style="width: 36px; height: 36px; font-size: 1.1rem;">+</button>
+            </div>
+
+            <button class="btn-modal-add" id="addToCartModalBtn" type="button" style="margin-bottom: 8px; padding: 12px;">Añadir al pedido</button>
+            <button class="btn-modal-back" id="closeProductModalBtn" type="button" style="width: 100%; padding: 10px;">← Regresar al catálogo</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL 2: DRAWER CHECKOUT "MI PEDIDO" -->
+  <div class="drawer-overlay" id="checkoutDrawer">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <h3>Mi Pedido</h3>
+        <button class="drawer-close" id="closeCheckoutBtn" type="button">✕</button>
+      </div>
+
+      <!-- Lista de ítems seleccionados -->
+      <div id="cartItemsList"></div>
+
+      <!-- Sugerencia Llajua con Icono de Ají -->
+      <div class="suggestion-box">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="background-color: #fee2e2; color: #dc2626; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; font-size: 1.2rem; flex-shrink: 0;">
+            <i class="fa-solid fa-pepper-hot"></i>
+          </div>
+          <div>
+            <span class="suggestion-label">Sugerencia</span>
+            <div class="suggestion-title">¿Añadimos LLAJUA SUMAKI?</div>
+          </div>
+        </div>
+        <button class="btn-chimi" id="chimiBtn" type="button">+ Bs 25.0</button>
+      </div>
+
+      <!-- Formulario de Pedido -->
+      <div class="form-group">
+        <label class="form-label">Nombre Completo</label>
+        <input type="text" id="customerName" class="form-input" placeholder="Tu nombre aquí...">
+      </div>
+
+      <div class="delivery-grid">
+        <div class="delivery-opt active" id="optRecojo" onclick="selectDelivery('recojo')">
+          <div style="font-size: 1.3rem; margin-bottom: 4px;"><i class="fa-solid fa-store"></i></div>
+          RECOJO
+        </div>
+        <div class="delivery-opt" id="optDelivery" onclick="selectDelivery('delivery')">
+          <div style="font-size: 1.3rem; margin-bottom: 4px;"><i class="fa-solid fa-motorcycle"></i></div>
+          DELIVERY
+        </div>
+      </div>
+
+      <!-- Total y Enviar WhatsApp -->
+      <div class="checkout-box">
+        <div class="checkout-total-row">
+          <span class="checkout-label">Total Aproximado</span>
+          <div><span style="color: var(--red-main); font-weight: 800; font-size: 0.9rem;">Bs </span><span class="checkout-amount" id="checkoutTotalAmount">0.00</span></div>
+        </div>
+        <button class="btn-whatsapp-order" id="sendWhatsAppBtn" type="button">
+          <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i> PEDIR POR WHATSAPP
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a class="wa-float" href="https://wa.me/59165641009?text=Hola%20SUMAKI,%20deseo%20información%20sobre%20sus%20productos%20de%20carne%20de%20llama." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- SCRIPTS ORDENADOS CORRECTAMENTE -->
+  <script src="js/data.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
